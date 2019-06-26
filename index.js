@@ -1,5 +1,4 @@
 const express = require("express");
-const bodyParser = require("body-parser");
 
 const server = express();
 
@@ -17,7 +16,7 @@ function checkProjectID(req, res, next) {
   return next();
 }
 
-server.use(bodyParser.json());
+server.use(express.json());
 
 server.use((req, res, next) => {
   console.log(`Request count: ${++requestCount}`);
